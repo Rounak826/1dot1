@@ -17,12 +17,16 @@ import Login from './Components/Login/Login';
 import MentorSetup from './Components/MentorSetup/MentorSetup';
 import MenteeSetup from './Components/MenteeSetup/MenteeSetup';
 import Admin from './Components/Admin/Admin';
+import AuthProvider from './Context/AuthContext';
+import PreventedRoute from './PreventedRoute';
 
 
 function App() {
   
   return (
+    <AuthProvider>
 
+    
     <div className="App">
       <Router>
         <Navbar />
@@ -37,7 +41,7 @@ function App() {
         <Route exact path='/privacy-policy' element={<PrivacyPolicy/>}/>
         <Route exact path='/terms-of-services' element={<Terms/>}/>
         <Route exact path='/Mentor' element={<Mentorpage/>}/>
-        <Route exact path='/Login' element={<Login/>}/>
+        <Route exact path='/Login' element={<PreventedRoute><Login/></PreventedRoute>}/>
         <Route exact path='/signup' element={<Signup/>}/>
         <Route exact path='/mentor-setup' element={<MentorSetup/>}/>
         <Route exact path='/mentee-setup' element={<MenteeSetup/>}/>
@@ -48,6 +52,7 @@ function App() {
       </Router>
 
     </div>
+    </AuthProvider>
   );
 }
 

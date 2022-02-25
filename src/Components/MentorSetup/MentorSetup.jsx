@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Hero from '../Hero/Hero'
-import './MentorSignup.css'
+import './MentorSetup.css'
 import illustration from '../../Assets/SVG/mentor-signup.svg'
 import terms from '../../Assets/SVG/terms.svg'
 import money from '../../Assets/mentor-signup/money.png'
@@ -8,11 +8,13 @@ import moneybag from '../../Assets/mentor-signup/money-bag.png'
 import check from '../../Assets/mentor-signup/check-mark.png'
 import clock from '../../Assets/mentor-signup/wall-clock.png'
 import { AlertCircle, X} from 'react-feather'
+import { useAuth } from '../../Context/AuthContext'
+import BhavyaHaswani from '../../Assets/Mentors-squad/Bhavya-Haswani1.jpg'
 
 export default function MentorSignup() {
     const [showForm, setShowForm] = useState(false);
     const [showGuidelines, setShowGuidelines] = useState(false);
-
+   
     return (
         <div className="mentorSignup">
             <Hero heading={'Join As A Mentor'} src={illustration} />
@@ -85,9 +87,48 @@ function Info(props) {
 
     );
 }
+const initial = {
+    name: 'CA BHAVYA HASWANI',
+    title: 'Asst. Manager, Practus Advisor Pvt. Ltd.',
+    image: BhavyaHaswani,
+    about_1dot1: `At the age where one is practically considered child for making any decision, the most important decision of his life (Career Choice) is on him.
+    It is very important to make the right decision and follow the right direction 1dot1 is an attempt to ease your life here.`,
+    skills: ['Business Analysis', 'Financial Reporting', 'Cost Management Services', 'Legal Documentation', 'Banking Compliance'],
+    time: 'Daily (7:30 pm to 8:30 pm)',
+    social: { Instagram: 'https://instagram.com/', Twitter: 'https://www.twitter.com/', Linkedin: '', Facebook: '' },
+    about: [
+        'Bhavya never had a rigid plan on where he would go from the very 1st day. It’s always been “one step at a time” for him. Starting from the day he passed HSC, he was clear about going for Commerce because he could not handle science.',
+        'During 1st year of graduation, he thought of giving a chance to CA field and finally he registered himself for CPT (CA Foundation now) and gradually with the time he was sure to pursue career in this field.',
+        'As he said “one step at a time” all this happened with this simple formula. Meanwhile, he worked on start ups, sold mobile phones, handled legal and banking compliance, done promotional events too.',
+        'He always thinks, re-thinks, handle confusions and then try all the available options.While in midst of all this he realized his attraction towards financial consultancyto end with.',
+        'Here he is now “Financial Consultant”, and loves to maintain his travel albums.'
+    ],
+    languages: ['English', 'Hindi', 'Sindhi'],
+    education: [
+        'Chartered Accountancy, The Institute of Chartered Accountancy of India',
+        'Bachelor’s of Law (Intellectual Property rights and Law of Medicine), KC Law College',
+        'Bachelor’s of Commerce (Audit and Finance), HR College of Commerce and Economics'
+    ],
+    exp: [
+        'Assistant Manager (Finance Delivery), Practus Advisor’s Pvt Ltd (Mar’20 – Present)',
+        'Secretarial and Finance, MyMINZ (Jul’16 – Jan’18)',
+        'Associate (Legal Documentaion), Integreon Managed Services (Jun’17 – Jul’17)',
+        'Article Intern (Financial Consultancy), MyCFO (Jul’13 – Oct’15)',
+        'Article Intern (Audit and Taxation), Rohira Mehta and Associates (Sep’12 – Jun’13)'
+    ],
+    achievements: [
+        '(IPCC + Final) 17 Attempts and Now CA'
+    ],
+    likes: 3
+}
 function Form() {
     const [method, setMethod] = useState(0);
-
+    const [data, setData] = useState(initial);
+    const {mentorProfile} = useAuth();
+    function handelSubmit(e){
+        e.preventDefault();
+        mentorProfile(data).then(e=>{console.log(e)});
+    }
     return (
         <div className="form">
             <form action="">
@@ -292,7 +333,7 @@ function Form() {
                         <div className="tooltip"><AlertCircle/><p>Eg. any other social media links, website address or anything you want to show in your profile</p></div>
                     </div>
                 </div>
-                <button className='btn-primary'>Submit</button>
+                <button onClick={handelSubmit} className='btn-primary'>Submit</button>
             </form>
         </div>
     )
