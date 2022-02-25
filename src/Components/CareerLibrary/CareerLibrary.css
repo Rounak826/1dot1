@@ -1,0 +1,80 @@
+.careerLibrary{
+    display: flex;
+    flex-direction: column;
+}
+.careerLibrary .library{
+    margin: 7rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2;
+    justify-content: center;
+    align-items: stretch;
+}
+.careerLibrary .library .libCard{
+    width: 25%;
+    padding: 1.5rem;
+    border-radius:1rem;
+
+}
+.careerLibrary .library .libCard .image{
+    border-radius:1rem 1rem 0 0;
+    width: 100%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f3f3f3;
+    overflow: hidden;
+}
+.careerLibrary .library .libCard .image img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+.careerLibrary .library .libCard .info{
+    padding: 1rem;
+    background-color: #062448;
+    color: #fff;
+    border-radius: 0 0 1rem 1rem;
+}
+.careerLibrary .library .libCard .info h5{
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 0.5rem;
+ }
+ .careerLibrary .library .libCard .info p{
+    font-size: 1rem;
+    font-weight: 200;
+    text-align: center;
+    color: #f3f3f3  ;
+    margin: 0;
+    margin-bottom: 0.5rem;
+ }
+ @media only screen and (max-width: 1196px) {
+    .careerLibrary .library{
+        gap: 2rem;
+    }
+ }
+ @media only screen and (max-width: 1024px) {
+    .careerLibrary .library{
+        gap: 1rem;
+    }
+    .careerLibrary .library .libCard{
+        width: 40%;
+    }
+ }
+ @media only screen and (max-width: 768px) {
+    .careerLibrary .library{
+        gap: 2rem;
+    }
+    .careerLibrary .library .libCard{
+        width: 70%;
+    }
+ }
+ @media only screen and (max-width: 425px) {
+    .careerLibrary .library .libCard{
+        width: 80%;
+    }
+ }

@@ -1,38 +1,139 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App{
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  overflow-x: hidden ;
+}
+.ml-10{
+  margin-left: 10rem;
+}
+.flex{
+  display: flex;
+}
+.flex .wrap{
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.row{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.flex .col{
+  flex-direction: column;
+}
+.flex .center{
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+}
+.center-x{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.center-y{
+  display: flex;
+  align-items: center;
+}
+.btn-primary{
+  width: fit-content;
+  padding: 0.5rem 2rem;
+  background-color: #023E8A;
+  border: solid 2px rgba(255, 255, 255, 0);
+  color: #fff !important;
+  border-radius: 1.4rem;
+
+}
+.btn-primary:hover{
+  background-color: #fff;
+  border: solid 2px #023E8A;
+  color: #023E8A !important;
+}
+.btn-secondary{
+  text-decoration: none;
+  width: fit-content;
+  padding: 0.5rem 2rem;
+  background-color: #fff;
+  border: solid 2px #023E8A;
+  color: #023E8A !important;
+  border-radius: 1rem;
+  transition: all 0.2s;
+}
+.btn-secondary:hover{
+  background-color: #023E8A;
+  border: solid 2px #fff;
+  color: #fff !important;
+}
+.btn-tertiary{
+  text-decoration: none;
+  width: fit-content;
+  padding: 0.6rem 2rem;
+  background-color: #fff;
+  color: #2e2e2e;
+  border-radius: 1rem;
+  transition: all 0.2s;
+}
+.btn-tertiary:hover{
+  background-color: #adecfc;
+}
+@media only screen and (max-width: 1196px) {
+  .btn-primary{
+    padding: 0.5rem 1rem;
+  }
+}
+.clip-path3{
+  clip-path: polygon(80% 0, 100% 15%, 100% 100%, 0 69%, 0 28%);
 }
 
-.App-link {
-  color: #61dafb;
+.heading{
+  
+  display: flex;
+  flex-direction: column;
+  font-family: 'Montserrat';
+  color: #033F88;
+  margin: 0;
+  margin-top: 4rem;
+}
+.heading h5{
+  margin: 0%;
+}
+.heading hr{
+  margin: 1rem 0 0rem 0;
+  width: 3rem;
+  height: 1px;
+  background-color: #90e0ef;
+}
+.center-x{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.left{
+  align-items:flex-start;
+}
+.lg h5{
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+.lg span{
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+.md h5{
+  font-size: 2rem;
+  font-weight: 400;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.md span{
+  font-size: 2rem;
+  font-weight: 700;
+}
+.sm h5{
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.sm span{
+  font-size: 1.5rem;
+  font-weight: 600;
 }

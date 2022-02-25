@@ -1,0 +1,138 @@
+.joinMentor{
+    margin-top: 6rem;
+    width: 100%;
+    clip-path: polygon(0 17%, 51% 0, 100% 21%, 100% 86%, 93% 96%, 0 76%);
+    background: rgb(1,169,195);
+    background: linear-gradient(90deg, rgba(1,169,195,1) 0%, rgba(6,117,200,1) 59%, rgba(6,117,200,1) 100%);
+    padding-top:2rem;
+    padding-bottom: 10rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.joinMentor .info{
+    margin-left: 10rem;
+    padding-top: 5rem;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
+.joinMentor .info h3{
+    margin: 0;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: white;
+    margin-bottom: 0;
+
+}
+.joinMentor .info h3 span{
+    font-weight: 600;
+}
+.joinMentor .info hr{
+    margin: 2rem 0 0rem 0;
+    width: 3rem;
+    height: 1px;
+    background-color:  #90e0ef;
+    color:  #90e0ef;
+}
+.joinMentor .info p{
+    width: 80%;
+    font-size: 1rem;
+    color: white;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+}
+.joinMentor .info a{
+    font-weight: 700;
+    font-family: "Montserrat", Sans-serif;
+}
+
+.joinMentor .tabel{
+    margin-top: 5rem;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+}
+.joinMentor .tabel .Trow{
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+    margin-left: 5rem;
+}
+.joinMentor .tabel .Trow .img{
+    display: flex;
+    align-items: flex-start;
+    width: 10%;
+    min-width: 3.5rem;
+    filter: invert(99%) sepia(0%) saturate(7500%) hue-rotate(257deg) brightness(103%) contrast(104%);
+}
+.joinMentor .tabel .Trow .img img{
+    width: 60%;
+}
+.joinMentor .tabel .Trow .text{
+    padding-left: 0rem;
+    color: #fff;
+}
+.joinMentor .tabel .Trow .text h5{
+    font-family: "Montserrat", Sans-serif;
+    font-weight: 400;
+    font-size: 1.2rem;
+    margin: 0;
+    margin-bottom: 1rem;
+}
+.joinMentor .tabel .Trow .text h5 span{
+    font-weight: 600;
+}
+@media only screen and (max-width: 1196px) {
+    .joinMentor{
+        justify-content: space-between;
+    }
+    .joinMentor .info{
+        width: 50%;
+        margin-left: 6rem;
+    }
+    .joinMentor .tabel{
+        margin-right:6rem ;
+        width: 50%;
+    }
+    .joinMentor .tabel .Trow{
+        margin-left: 0;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .joinMentor{
+        flex-direction: column;
+        clip-path: polygon(0 9%, 54% 0, 100% 16%, 100% 90%, 82% 100%, 0 92%);
+
+    }
+    .joinMentor .info{
+        width: 100%;
+        gap: 1rem;
+        margin-left: 0rem;
+        align-items: center;
+        text-align: center;
+    }
+    .joinMentor .tabel{
+        width: 100%;
+        margin-right: 0;
+        align-items: center;
+        margin-bottom: 2rem;
+    }
+    .joinMentor .tabel .Trow{
+        width: 90%;
+        margin: 0;
+        gap: 1rem;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+}

@@ -1,0 +1,206 @@
+.hero1{
+    width: 100%;
+    margin: 6rem 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.hero1 .info{
+    margin-left: 10rem;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.hero1 .info h2{
+    font-size: 5rem;
+    margin: 0;
+    color: #062448;
+    font-family: 'Wellfleet', cursive;
+}
+.hero1 .info h2 span{
+    color:#4C9CD8;
+}
+.hero1 .info  hr{
+    width: 5rem;
+    height: 2px;
+    background-color: #467DB6;
+    padding: 0;
+    margin: 0;
+    
+}
+.hero1 .info p{
+    width: 80%;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #062448;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 40px;
+}
+.hero1 .info a{
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+.hero1 .img{
+    margin-right: 10rem;
+    width: 50%;
+}
+.hero1 .img img{
+    width: 100%;
+}
+
+
+@media only screen and (max-width: 1196px) {
+    .hero1 .info{
+        margin-left: 6rem;
+    }
+
+  .hero>div:first-child{
+    margin-left: 6rem;
+    }
+  }
+
+  @media only screen and (max-width: 1024px) {
+    .hero1{
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .hero1 .info{
+        width: 100%;
+        margin-left: 6rem;
+        gap: 1rem;
+
+    }
+    .hero1 .img{
+        margin-top: 1rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .hero1 .img img{
+        width: 50%;
+    }
+  }
+  @media only screen and (max-width: 768px) {
+    .hero1{
+        margin-top: 1rem;
+        gap: 4rem;
+    }
+    .hero1 .info{
+        margin-left: 2rem;
+        gap:2rem;
+    }
+    .hero1 .info h2{
+        font-size: 3rem;
+        margin: 0;
+        color: #062448;
+        font-family: 'Wellfleet', cursive;
+    }
+    .hero1 .info h2 span{
+        color:#4C9CD8;
+        word-wrap:break-word;
+        word-break: break-word;;
+    }
+    .hero1 .info  hr{
+        width: 6rem;
+        height: 2px;
+        background-color: #467DB6;
+        padding: 0;
+        margin: 0;
+        
+    }
+    .hero1 .info p{
+        width: 90%;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #062448;
+        font-family: 'Montserrat', sans-serif;
+        line-height: 40px;
+    }
+    .hero1 .info a{
+        font-size: 1.1rem;
+        font-weight: 600;
+    }
+  }
+.hero{
+    margin-top: 0;
+    padding-top: 5rem;
+    padding-bottom: 8rem;
+    height: 100vh;
+    width: 100%;
+    clip-path: polygon(0 0, 100% 0%, 100% 73%, 25% 100%, 0 76%);
+    background: rgb(136,247,231);
+    background: linear-gradient(20deg, rgba(136,247,231,1) 0%, rgba(158,207,230,1) 59%, rgba(168,190,230,1) 100%);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.hero>div:first-child{
+    margin-left: 10rem;
+}
+.hero h1{
+    width: 100%;
+    font-size: 4.8rem;
+    margin: 0;
+    color: #062448;
+    font-family: 'Wellfleet', cursive;
+} 
+.hero hr{
+    width: 5rem;
+    height: 2px;
+    background-color: #467DB6;
+    padding: 0;
+    margin: 0;
+    margin-top: 1rem;
+    
+}
+.hero .image{
+    display: flex;
+    justify-content:flex-end;
+    padding-right: 10rem;
+    width: 50%;
+}
+.hero .image img{
+    width: 70%;
+}
+@media only screen and (max-width: 1024px) {
+    .hero{
+        flex-direction: column;
+    }
+    .hero>div:first-child{
+        margin: 0;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 3rem;
+        width: 100%;
+    }
+    .hero .image{
+        width: 100%;
+        margin: 0;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+    }
+    .hero .image img{
+        width: 50%;
+        min-width: 300px;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .hero{
+        clip-path: polygon(0 0, 100% 0, 100% 86%, 23% 100%, 0 90%);
+
+        padding-top: 5rem;
+        padding-bottom: 6rem; 
+        height: max-content;
+
+    }
+    .hero h1{
+        width: 100%;
+        font-size: 3rem;
+    }
+}

@@ -1,0 +1,81 @@
+.login{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 5rem;
+
+}
+.login .head{
+    display: flex;
+    flex-direction: column;
+    margin-top: 6rem;
+
+}
+.login .head h1{
+    font-family: 'Montserrat';
+    font-size: 3rem;
+    color: #033F88;
+    margin: 0;
+}
+.login .head h1 span{
+    color: #4C9CD8;
+}
+.login .head hr{
+    width: 4rem;
+    height: 3px;
+    background-color: #4C9CD8;
+    border: none;
+    margin: 1rem 0 4rem 0;
+ 
+}
+.login .illustration{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login .illustration img{
+    width: 70%;
+}
+.login .form{
+    width: 50%;
+    margin-right: 0;
+}
+.login .form form{
+    width: 80%;
+    margin-right: 10rem;
+}
+.login .form .btn-primary{
+    padding: 0.5rem 1rem;
+}
+@media only screen and (max-width: 1196px) {
+    .login .form form{
+        margin-right: 6rem;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .login .head h1{
+        font-size: 2rem ;
+    }
+    .login .row{
+        flex-direction:column-reverse;
+    }
+    .login .illustration{
+        width: 100%;
+    }
+    .login .illustration img{
+        width: 60%;
+    }
+    .login .form{
+        width: 100%;
+        margin-bottom: 4rem;
+    }
+    .login .form form{
+        margin-right: 0rem;
+    }
+    .login .form .btn-primary{
+        width: 100%;
+        padding: 0.3rem 1rem;
+    }
+}

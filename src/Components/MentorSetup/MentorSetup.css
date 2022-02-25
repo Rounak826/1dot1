@@ -1,0 +1,367 @@
+.mentorSignup{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5rem;
+}
+.mentorSignup .info{
+    margin-top: 8rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.mentorSignup .info .head{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.mentorSignup .info .head p{
+    font-family: "Montserrat", Sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #929292;
+    margin: 0;
+    margin-top: 1rem;
+}
+.mentorSignup .info .head h5{
+    font-size: 2rem;
+    font-weight: 400;
+    color: #033F88;
+    margin: 0;
+}
+.mentorSignup .info .head hr{
+    margin: 1rem 0 0rem 0;
+    width: 3rem;
+    height: 1px;
+    background-color: #90e0ef;
+}
+.mentorSignup .info .row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+.mentorSignup .info .row .image{
+    padding-left:10rem ;
+    width: 50%;
+}
+.mentorSignup .info .row .image img{
+    width: 80%;
+}
+.mentorSignup .tabel{
+    width: 50%;
+    margin-top: 5rem;
+    width: 60%;
+    margin-right: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.mentorSignup .tabel .Trow{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+}
+.mentorSignup .tabel .Trow .img{
+    width: 5%;
+    min-width: 1.8rem;
+}
+.mentorSignup .tabel .Trow .img img{
+    width: 100%;
+ }
+.mentorSignup .tabel .Trow .text{
+
+    padding-left: 2rem;
+    width: 90%;
+    color: #1e1e1e
+}
+.mentorSignup .tabel .Trow .text h5{
+    font-family: "Montserrat", Sans-serif;
+    font-weight: 500;
+    font-size: 1.2rem;
+    margin: 0;
+    margin-bottom: 1rem;
+}
+.connectMentors .tabel .Trow .text h5 span{
+    font-weight: 600;
+}
+.mentorSignup .tabel .Trow .text p{
+    font-family: 'poppins';
+    font-size: 0.9rem;
+    width: 100%;
+}
+.mentorSignup .info .join{
+    margin: 5rem 0;
+    font-size: 1.3rem;
+    border-radius: 0.5rem;
+    margin-left: 2rem;
+}
+.mentorSignup .btn-tertiary{
+    padding: 0.5rem 2rem;
+    color: #033F88;
+    border:solid 2px #033F88;
+}
+.form{
+    width: 100%;
+    margin-right: 10rem;
+    display: flex;
+    justify-content: center;
+}
+.form form{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+.form form .form-row{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+
+}
+.form form .form-col-50{
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.form form .form-col-25{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.form form .form-col-100{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+} 
+.form form label{
+    font-family: "Montserrat", Sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+.form form input{
+    padding-left: 1rem;
+    font-size: 1.1rem;
+    height: 2rem;
+    background-color: #fcfcfc;
+    border:solid 1px rgb(197, 197, 197);
+    border-radius: 0.2rem;
+
+}
+.form form input[type="date"]{
+    width: 94%;
+    height: 2.3rem;
+}
+.form form input[type=file]::file-selector-button{
+    width: 50%;
+    height: 100%;
+    margin-left: 0;
+    padding: 0.5rem;
+    background-color: #e7e7e7;
+    border: none;
+}
+.form form select{
+    height: 2.3rem;
+    background-color: #fcfcfc;
+    border:solid 1px rgb(197, 197, 197);
+    border-radius: 0.2rem;
+    padding-left: 1rem;
+    font-size: 1.1rem;
+
+}
+.form form textarea{
+    background-color: #fcfcfc;
+    border:solid 1px rgb(197, 197, 197);
+    border-radius: 0.2rem;
+    padding-left: 1rem;
+    font-size: 1.1rem;
+
+} 
+.form form .check{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.form form .check p{
+    margin: 0;
+    padding: 0;
+    margin-left: 1rem;
+}
+.form form .check input{
+    margin: 0;
+    height: 1rem;
+}
+.has-tooltip{
+    position: relative;
+}
+.tooltip{
+    width: fit-content;
+    max-width: 270px;
+    padding: 0.5rem 0.8rem;
+    box-shadow: 0px 0px 2px 2px rgba(177, 182, 190, 0.199);
+    position: absolute;
+    top:100%;
+    left:100%;
+    background-color: #ffffff;
+    border: solid 1px #dfdfdf;
+    border-radius:0 1rem 1rem 1rem;
+    z-index: 20;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0.5rem;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 2s, visibility 1s ease-in-out;
+
+}
+.tooltip svg{
+    margin-top: 0.1rem;
+    height: 1.2rem;
+    color: #ecd60e;
+    min-height: 1.2rem;
+    min-width: 1rem;
+    width: fit-content;
+    word-wrap: break-word;
+}
+.tooltip p{
+    margin: 0;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
+.has-tooltip:where(:hover,:focus-within) > .tooltip {
+        opacity: 1;
+        visibility: visible;
+    }
+.form form .btn-primary{
+    padding: 0.8rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+}
+.form form h4{
+    color: #033F97;
+}
+.mentorSignup .guidelines{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: inherit;
+    height: 100%;
+    width: 100%;
+    color: #4e4e4e;
+}
+.mentorSignup .guidelines .dialouge{
+    position: relative;
+    width: 60%;
+    padding: 2rem;
+    border-radius: 2rem;
+    background-color: #f1f1f1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.mentorSignup .guidelines .dialouge ul{
+    margin: 2rem 0;
+    font-family: 'poppins';
+
+}
+
+.mentorSignup .guidelines .dialouge li{
+    margin-bottom: 1rem;
+}
+.mentorSignup .guidelines .dialouge p{
+    font-weight: 600;
+}
+.mentorSignup .guidelines .dialouge .closeDialouge{
+    position: absolute;
+    right: 2rem;
+    top:2rem;
+    background-color: inherit;
+    border: none;
+    color: #033F97;
+    transition: all 0.3s ;
+}
+.mentorSignup .guidelines .dialouge .closeDialouge:hover{
+    color: #4a8df1;
+    cursor: pointer;
+}
+@media only screen and (max-width: 1196px) {
+    .mentorSignup .tabel{
+        margin-right: 6rem;
+    }
+    .mentorSignup .info .row .image{
+        padding-left: 6rem;
+    }
+    .form{
+        margin-right: 6rem;
+    }
+    .form form{
+        width: 60%;
+    }
+    .mentorSignup .guidelines .dialouge{
+        width: 70%;
+    }
+    .form form{
+        width: 80%;
+        
+    }
+    .form form .form-col-25{
+        font-size: 1rem;
+        min-width: 162px;
+    }
+}
+@media only screen and (max-width: 1024px) {
+    .mentorSignup .info .row .image{
+        padding-left: 3rem;
+    }
+    .mentorSignup .tricks .row{
+        gap:1.5rem;
+    }
+    .mentorSignup .tricks .row .item{
+        width: 32%;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .form form{
+        align-items: center;
+    }
+    .form form .form-row{
+        width: 80%;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .form form .form-col-25{
+        width: 60%;
+    }
+    .form form .form-col-50{
+        width: 100%;
+    }
+    .form form input{
+        font-size: 0.9rem;
+    }
+    .form form select{
+        font-size: 0.9rem;
+    }
+    .form form .btn-primary{
+        width: 80%;
+    }
+    .tooltip{
+
+        left: 0%;
+    }
+}

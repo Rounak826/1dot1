@@ -1,0 +1,564 @@
+.aboutPage{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.aboutPage .about{
+    display: flex;
+    flex-direction: row;
+    margin-top: 4rem;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.aboutPage .about .info{
+    width: 50%;
+    margin-left: 10rem;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.aboutPage .about .info h3{
+    color: #033F88;
+    font-size: 2.2rem;
+    font-weight: 400;
+    font-family: "Montserrat", Sans-serif;
+    margin: 0;
+}
+.aboutPage .about  .info h3 span{
+    font-weight: 800;
+}
+.aboutPage .about .info hr{
+    width:3rem;
+    height: 1px;
+    background-color: #90E0EF;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+.aboutPage .about .info p{
+    width: 70%;
+    text-align: center;
+    font-size: 1.1rem;
+    font-family: 'Poppins', sans-serif;
+}
+.aboutPage .about .img{
+    margin-right: 10rem;
+    width: 50%;
+
+}
+.aboutPage .about .img img{
+    width: 100%;
+}
+
+@media only screen and (max-width: 1196px) {
+    .aboutPage .about{
+        justify-content: space-between;
+    }
+    .aboutPage .about .info{
+        width: 50%;
+        margin-left: 6rem;
+    }
+    .aboutPage .about .info p{
+        width: 95%;
+        font-size: 1rem;
+    }
+    .aboutPage .about .img{
+        width: 50%;
+        margin-right: 6rem;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .aboutPage .about{
+        flex-direction: column;
+    }
+    .aboutPage .about .info{
+        width: 100%;
+        margin: 0;
+    }
+    .aboutPage .about .info p{
+        width: 90%;
+    }
+    .aboutPage .about .img{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin: 0;
+    }
+    .aboutPage .about .img img{
+        width: 50%;
+        min-width: 250px;
+    }
+
+}
+
+.history{
+    margin-top: 5rem;
+    width: 100%;
+    clip-path: polygon(0 17%, 51% 0, 100% 21%, 100% 86%, 93% 96%, 0 76%);
+    background: rgb(1,169,195);
+    background: linear-gradient(90deg, rgba(1,169,195,1) 0%, rgba(6,117,200,1) 59%, rgba(6,117,200,1) 100%);
+    padding-top:6rem;
+    padding-bottom: 10rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.history .info{
+    margin-left: 10rem;
+    padding-top: 5rem;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.history .info h3{
+    margin: 0;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: white;
+    margin-bottom: 0;
+
+}
+.history .info h3 span{
+    font-weight: 600;
+}
+.history .info hr{
+    margin: 2rem 0 0rem 0;
+    width: 3rem;
+    height: 1px;
+    background-color:  #90e0ef;
+    color:  #90e0ef;
+}
+.history .info p{
+    width: 80%;
+    font-size: 1rem;
+    color: white;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+.history .img{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+.history .img img{
+    width: 50%;
+    min-width: 250px;
+}
+@media only screen and (max-width: 1196px) {
+    .history{
+        align-items: center;
+    }
+    .history .info{
+        margin-left: 6rem;
+        text-align: center;
+    }
+    .history .info p{
+        width: 100%;
+    }
+    .history .img img{
+       width: 70%;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .history{
+        flex-direction: column;
+        clip-path: polygon(0 9%, 54% 0, 100% 16%, 100% 90%, 82% 100%, 0 92%);
+    }
+    .history .info{
+        width: 100%;
+        margin: 0;
+    }
+    .history .info p{
+        width: 90%;
+    }
+    .history .img{
+        width: 100%;
+    }
+    .history .img img{
+        width: 50%;
+        
+     }
+
+}
+.plan{
+    margin: 15rem 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.plan .card{
+    position: relative;
+    width: 25%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+}
+.plan .card:first-child{
+    margin-left: 10rem;
+    top: 5rem;
+}
+.plan .card:last-child{
+    margin-right: 10rem;
+    top: -5rem;
+}
+.plan .card .Image{
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: baseline;
+    margin-bottom: 0.5rem;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.plan .card .Image img{
+    width: 100%;
+}
+.plan .card h3{
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #033F88;
+    margin: 0;
+    margin-bottom: 1rem;
+}
+.plan .card h3 span{
+    font-weight: 700;
+
+}
+.plan .card p{
+    width: 90%;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: left;
+    color: #757575;
+    line-height: 1.6rem;
+    margin: 0;
+
+}
+@media only screen and (max-width: 1196px) {
+    .plan .card:first-child{
+        margin-left: 6rem;
+    }
+    .plan .card:last-child{
+        margin-right: 6rem;
+    }
+}
+@media only screen and (max-width: 1024px) {
+    .plan .card:first-child{
+        margin-left: 2rem;
+    }
+    .plan .card:last-child{
+        margin-right: 2rem;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .plan .card:first-child{
+       top:0;
+       right:25%;
+    }
+    .plan .card:last-child{
+        top: 0;
+        left: 25%;
+    }
+    .plan{
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+    .plan .card{
+        position: relative;
+        width: 45%;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; 
+    }
+    .plan .card p{
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 425px) {
+    
+    .plan .card{
+        width: 70%;
+    }
+    .plan .card:first-child{
+        top:0;
+        right:0;
+     }
+     .plan .card:last-child{
+         top: 0;
+         left: 0;
+     }
+}
+
+
+.thinking{
+    margin-top: 6rem;
+    width: 100%;
+    clip-path: polygon(0 17%, 51% 0, 100% 21%, 100% 86%, 93% 96%, 0 76%);
+    background: rgb(1,169,195);
+    background: linear-gradient(90deg, rgba(1,169,195,1) 0%, rgba(6,117,200,1) 59%, rgba(6,117,200,1) 100%);
+    padding-top:2rem;
+    padding-bottom: 10rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.thinking .info{
+    margin-left: 10rem;
+    padding-top: 5rem;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.thinking .info h3{
+    margin: 0;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: white;
+    margin-bottom: 0;
+
+}
+.thinking .info h3 span{
+    font-weight: 600;
+}
+.thinking .info hr{
+    margin: 2rem 0 0rem 0;
+    width: 3rem;
+    height: 1px;
+    background-color:  #90e0ef;
+    color:  #90e0ef;
+}
+.thinking .info p{
+    width: 80%;
+    font-size: 1rem;
+    color: white;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+}
+.thinking .info a{
+    font-weight: 700;
+    font-family: "Montserrat", Sans-serif;
+}
+
+.thinking .tabel{
+    margin-top: 5rem;
+    width: 60%;
+    margin-left: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.thinking .tabel .Trow{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+.thinking .tabel .Trow .img{
+    width: 60px;
+    height: 60px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #CDE3FE; 
+    border-radius: 5rem;
+}
+.thinking .tabel .Trow .img img{
+    width: 50%;
+
+}
+.thinking .tabel .Trow .text{
+
+    padding-left: 2rem;
+    width: fit-content;
+    color: #fff;
+}
+.thinking .tabel .Trow .text h5{
+    font-family: "Montserrat", Sans-serif;
+    font-weight: 400;
+    font-size: 1.2rem;
+    margin: 0;  
+    width: fit-content;
+}
+.thinking .tabel .Trow .text h5 span{
+    font-weight: 600;
+}
+@media only screen and (max-width: 1196px) {
+    .thinking{
+        justify-content: space-between;
+    }
+    .thinking .info{
+        width: 40%;
+        margin-left: 6rem;
+        align-items: flex-start;
+    }
+    .thinking .tabel{
+        width: 60%;
+        margin-right:6rem ;
+        margin-left: 0;
+        width: 50%;
+    }
+    .thinking .tabel .Trow{
+        margin-left: 0;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .thinking{
+        flex-direction: column;
+        align-items: center;
+        clip-path: polygon(0 9%, 54% 0, 100% 16%, 100% 90%, 82% 100%, 0 92%);
+    }
+    .thinking .info{
+        width: 100%;
+        margin: 0;
+        align-items: center;
+        margin-bottom: 4rem;
+    }
+    .thinking .tabel{
+        width: 90%;
+        margin: 0;
+        gap: 2rem;
+    }
+    .thinking .tabel .Trow{
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+        text-align: center;
+    }
+    .thinking .tabel .Trow .text{
+        padding: 0;
+        padding-left: 1rem;
+    }
+}
+.team{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin: 5rem 0;
+}
+.team .head{
+    margin-left: 10rem;
+    display: flex;
+    flex-direction: column;
+}
+.team .head h5{
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: #033F88;
+    margin: 0;
+}
+.team .head .h5 span{
+    font-weight: 600;
+}
+.team .head hr{
+    width:3rem;
+    height: 1px;
+    background-color: #90E0EF;
+    outline:#90E0EF;
+    border: solid 1px #90E0EF ;
+    margin: 1rem 0 5rem 0;
+ } 
+
+.team .wrapper{
+    padding-left: 10rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:flex-start;
+    gap: 1.5rem;
+}
+.team .teamCard{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25%;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 3px 40px rgb(36 36 36 / 10%);
+    gap: 1rem;
+}
+.team .teamCard .image{
+    width: 100%;
+    height: 70%;
+    overflow: hidden;
+    border-radius: 1rem;
+}
+.team .teamCard .image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.team .teamCard .info h4{
+    font-weight: 800;
+    font-size: 1.2rem;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    margin-bottom: 0.5rem;
+}
+.team .teamCard .info p{
+    color: #757575;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+.team .teamCard .social{
+    display: flex;
+    width: 100%;
+}
+.team .teamCard .social svg{
+    color: #757575;
+    height: 1rem;
+    transition:all 0.2s;
+}
+.team .teamCard .social svg:hover{
+    color: #062448;
+}
+@media only screen and (max-width: 1196px) {
+    .team .wrapper{
+        padding-left: 6rem;
+        padding-right: 2rem;
+        gap: 1rem;
+    }
+
+}
+@media only screen and (max-width: 832px) {
+    .team .wrapper{
+        padding-left: 2rem;
+        padding-right: 2rem;
+        gap: 1rem;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .team .teamCard{
+        width: 40%;
+    }
+    .team .teamCard .info p{
+        font-size: 0.9rem;
+    }
+}
+@media only screen and (max-width: 624px) {
+    .team .wrapper{
+        align-items: center;
+        justify-content: center;
+    }
+    .team .teamCard{
+        width: 70%;
+    }
+}

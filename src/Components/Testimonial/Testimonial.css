@@ -1,0 +1,76 @@
+.testimonial{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+.testimonial .head{
+    margin-top: 1rem;
+    margin-left: 10rem;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+}
+
+.testimonial .carousal{
+    width: 50%;
+}
+
+.testimonial .carousal .item{
+    padding: 0 6rem;
+    background-image:linear-gradient(rgba(255,255,255,.9), rgba(255,255,255,.9)), url('../../Assets/Logo-1.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 6rem;  
+    margin: 2rem;
+}
+.testimonial .carousal .dot{
+    background-color:  #033F88 !important;
+}
+.testimonial .carousal .item p{
+    font-size: 0.9rem;
+    font-family: "Montserrat", Sans-serif;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1.5rem;
+}
+@media only screen and (max-width:  1196px) {
+    .testimonial .head{
+        margin-left: 6rem;
+    }
+    .testimonial .carousal .item{
+        padding: 0 2rem;
+    }
+}
+@media only screen and (max-width:  768px) {
+    .testimonial{
+        margin-top: 5rem;
+        flex-direction: column;
+    }
+    .testimonial .head{
+        margin-left: 0rem;
+        width: 90%;
+    }
+    .md h5{
+        margin: 0;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    .md span{
+        font-size: 1.5rem;
+    }
+    .heading hr{
+        width: 4rem;
+    }
+    .testimonial .carousal{
+        width: 95%;
+    }
+    .testimonial .carousal .item{
+        padding: 0rem;
+    }
+}

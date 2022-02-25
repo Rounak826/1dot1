@@ -1,0 +1,155 @@
+.features{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.background{
+    position:absolute;
+    height: 100vh;
+    width: 100%;
+    clip-path: polygon(0 0, 0 100%, 51% 43%, 100% 100%, 100% 0, 73% 58%);
+    background: rgb(10,185,197);
+    background: linear-gradient(0deg, rgba(10,185,197,1) 0%, rgba(70,152,216,1) 59%, rgba(51,142,212,1) 100%);
+}
+.features .head{
+    margin: 0 3rem 0 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 20;
+}
+.features .head h3{
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 400;
+    font-family: "Montserrat", Sans-serif;
+    margin: 0;
+}
+.features .head h3 span{
+    font-weight: 600;
+}
+.features .head hr{
+    width: 3rem;
+    background-color: #fff;
+    height: 1px;
+    margin: 2rem 0;
+}
+.features .wrapper{
+    margin-right: 5rem;
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items:stretch;
+    width: 80%;
+    height: fit-content;
+    gap: 1rem;
+}
+.features .wrapper .Fcard{
+    width: 22%;
+    min-width: 170px;
+    background-color: #fff;
+    z-index: 20;
+    padding: 1.5rem;
+    padding-top: 1rem;
+    box-shadow: 0px 0px 10px 5px rgb(177 182 190 / 50%);
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-radius: 0.5rem;
+}
+.features .wrapper .Fcard .top{
+    width: 25%;
+    filter:invert(81%) sepia(80%) saturate(2546%) hue-rotate(169deg) brightness(107%) contrast(91%);
+}
+.features .wrapper .Fcard .top svg{
+    width: 100%;
+}
+.features .wrapper .Fcard h3{
+    font-family: 'Montserrat';
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #033F88;
+    margin: 0;
+}
+.features .wrapper .Fcard h3 span{
+    font-weight: 700;
+}
+.features .wrapper .Fcard hr{
+    width:2rem;
+    height: 1px;
+    background-color: #90E0EF;
+    outline:#90E0EF;
+    border: solid 1px #90E0EF ;
+    margin: 1rem 0 1rem 0;
+}
+.features .wrapper .Fcard p{
+    width: 90%;
+    font-size: 0.95rem;
+    text-align: left;
+    margin: 0;
+}
+@media only screen and (max-width: 1196px) {
+    .features{
+        align-items: flex-start;
+    }
+    .features .head{
+        margin: 6rem 1rem 0 2.5rem;
+        justify-content: center;
+    }
+    .features .wrapper{
+        margin-right: 3rem;
+        
+    }
+    .features .wrapper .Fcard{
+        width: 40%;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .features{
+        flex-direction: column;
+        height: fit-content;
+        clip-path: polygon(0 0, 59% 6%, 100% 0, 100% 100%, 53% 96%, 0 100%);
+
+        background: rgb(10,185,197);
+        background: linear-gradient(0deg, rgba(10,185,197,1) 0%, rgba(70,152,216,1) 59%, rgba(51,142,212,1) 100%);
+    }
+    .features .head{
+        margin-top: 9rem;
+        width: 100%;
+    }
+    .features .head h3{
+       font-size: 1.6rem;
+    }
+    .background{
+       display: none;
+    }
+    .features .wrapper{
+        margin-right: 2rem;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 10rem;
+    }
+    .features .wrapper .Fcard{
+        width: 90%;
+        padding: 0.8rem 1rem;
+        
+    }
+    .features .wrapper .Fcard .top{
+        width: 10%;
+        filter:invert(81%) sepia(80%) saturate(2546%) hue-rotate(169deg) brightness(107%) contrast(91%);
+
+    }
+    .features .wrapper .Fcard hr{
+        margin-bottom: 2rem;
+    }
+    .features .wrapper .Fcard p{
+        margin-bottom: 1rem;
+    }
+    .features .wrapper .Fcard .top svg{
+        width: 100%;
+    }
+}

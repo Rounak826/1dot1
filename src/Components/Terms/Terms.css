@@ -1,0 +1,51 @@
+.terms{
+    margin: 6rem 0;
+    display: flex;
+    flex-direction: column;
+}
+.terms p{
+    width: 90%;
+    margin-right: 10rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    line-height: 1.6rem;
+}
+.terms>:first-child{
+    margin-left: 10rem;
+}
+@media only screen and (max-width: 1196px) {
+    .terms p{
+        margin-right: 6rem;
+    }
+    .terms .ml-10{
+        margin-left: 6rem;
+    }
+    .terms>:first-child{
+        margin-left: 6rem;
+    }
+
+}    
+@media only screen and (max-width: 768px) {
+    .terms p{
+        margin-right: 2rem;
+        font-size: 0.9rem;
+    }
+    .terms .ml-10{
+        margin-left: 2rem;
+    }
+    .terms .lg h5{
+        font-size: 2rem;
+    }
+    .terms .lg span{
+        font-size: 2rem;
+    }
+    .terms .sm h5{
+        font-size: 1.2rem;
+    }
+    .terms .sm span{
+        font-size: 1.2rem;
+    }
+    .terms>:first-child{
+        margin-left: 2rem;
+    }
+}

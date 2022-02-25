@@ -1,0 +1,323 @@
+.connectMentors{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 5rem;
+}
+.connectMentors .info{
+    margin-top: 8rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.connectMentors .info .head{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.connectMentors .info .head p{
+    font-family: "Montserrat", Sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #929292;
+    margin: 0;
+    margin-bottom: 1rem;
+}
+.connectMentors .info .head h5{
+    font-size: 2rem;
+    font-weight: 400;
+    color: #033F88;
+    margin: 0;
+}
+.connectMentors .info .head hr{
+    margin: 1rem 0 0rem 0;
+    width: 3rem;
+    height: 1px;
+    background-color: #90e0ef;
+}
+.connectMentors .info .row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+.connectMentors .info .row .image{
+    padding-left:10rem ;
+    width: 50%;
+}
+.connectMentors .info .row .image img{
+    width: 80%;
+}
+.connectMentors .tabel{
+    width: 50%;
+    margin-top: 5rem;
+    margin-right: 10rem;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.connectMentors .tabel .Trow{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+.connectMentors .tabel .Trow .img{
+    width: 5%;
+    min-width: 1.8rem;
+}
+.connectMentors .tabel .Trow .img img{
+    width: 100%;
+ }
+.connectMentors .tabel .Trow .text{
+
+    padding-left: 2rem;
+    width: 90%;
+    color: #1e1e1e
+}
+.connectMentors .tabel .Trow .text h5{
+    font-family: "Montserrat", Sans-serif;
+    font-weight: 500;
+    font-size: 1.2rem;
+    margin: 0;
+    margin-bottom: 1rem;
+}
+.connectMentors .tabel .Trow .text h5 span{
+    font-weight: 600;
+}
+.connectMentors .tabel .Trow .text p{
+    font-family: 'poppins';
+    font-size: 0.9rem;
+    width: 100%;
+}
+.connectMentors .tricks{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: rgb(73,184,213);
+    background: linear-gradient(90deg, rgba(73,184,213,1) 0%, rgba(75,155,215,1) 59%, rgba(75,155,215,1) 100%);
+    padding: 1rem 0;
+
+}
+.connectMentors .tricks .head{
+    margin-top: 8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.connectMentors .tricks .head p{
+    font-family: "Montserrat", Sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #d8d8d8;
+    margin: 0;
+    margin-top: 1.5rem;
+}
+.connectMentors .tricks .head h4{
+    font-size: 2rem;
+    font-weight: 400;
+    color: #fff;
+    margin: 0;
+}
+.connectMentors .tricks .head hr{
+    margin: 1rem 0 0rem 0;
+    width: 3rem;
+    height: 1px;
+    background-color: #90e0ef;
+}
+.connectMentors .tricks .row{
+    margin: 2rem 0;
+    justify-content: center;
+    width: 100%;
+    gap: 3rem;
+
+}
+.connectMentors .tricks .row .item{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.connectMentors .tricks .row .item .image{
+    width: 10%;
+    background-color: #E6F1FE;
+    padding: 1rem;
+    border-radius: 5rem;
+}
+.connectMentors .tricks .row .item .image img{
+    width: 100%;
+
+}
+.connectMentors .tricks .row .item h5{
+    color: #fff;
+    font-weight: 600;
+    font-size: 1rem;
+}
+.connectMentors .form{
+    width: 100%;
+    margin-right: 10rem;
+    display: flex;
+    justify-content: center;
+}
+.connectMentors .form form{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+.connectMentors .form form .form-row{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+
+}
+.connectMentors .form form .form-col-50{
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.connectMentors .form form .form-col-100{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+} 
+.connectMentors .form form label{
+    font-family: "Montserrat", Sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+.connectMentors .form form input{
+    padding-left: 1rem;
+    font-size: 1.1rem;
+    height: 2rem;
+    background-color: #fcfcfc;
+    border:solid 1px rgb(197, 197, 197);
+    border-radius: 0.2rem;
+
+}
+.connectMentors .form form select{
+    height: 2.5rem;
+    background-color: #fcfcfc;
+    border:solid 1px rgb(197, 197, 197);
+    border-radius: 0.2rem;
+    padding-left: 1rem;
+    font-size: 1.1rem;
+
+}
+.connectMentors .form form textarea{
+    background-color: #fcfcfc;
+    border:solid 1px rgb(197, 197, 197);
+    border-radius: 0.2rem;
+    padding-left: 1rem;
+    font-size: 1.1rem;
+
+} 
+.connectMentors .form form .check{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.connectMentors .form form .check p{
+    margin: 0;
+    padding: 0;
+    margin-left: 1rem;
+}
+.connectMentors .form form .check input{
+    margin: 0;
+    height: 1rem;
+}        
+@media only screen and (max-width: 1196px) {
+    .connectMentors .tabel{
+        margin-right: 6rem;
+    }
+    .connectMentors .info .row .image{
+        padding-left: 6rem;
+    }
+    .connectMentors .form{
+        margin-right: 6rem;
+    }
+    .connectMentors .form form{
+        width: 60%;
+    }
+}
+@media only screen and (max-width: 1024px) {
+    .connectMentors .info .row .image{
+        padding-left: 3rem;
+    }
+    .connectMentors .tricks .row{
+        gap:1.5rem;
+    }
+    .connectMentors .tricks .row .item{
+        width: 32%;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .clip-path3{
+        clip-path: polygon(74% 0, 100% 5%, 100% 100%, 0 95%, 0 5%);
+
+
+    }
+    .connectMentors .info .row{
+        flex-direction: column;
+    }
+    .connectMentors .info .row .image{
+        margin-top: 3rem;
+        padding: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .connectMentors .info .row .image img{
+        width: 70%;
+    }
+    .connectMentors .tabel{
+        width: 80%;
+        align-items: center;
+        margin: 0;
+        margin-top: 5rem;
+    }
+    .connectMentors .tricks .head{
+        margin-top: 2rem;
+    }
+    .connectMentors .tricks .row{
+        gap:1.5rem;
+        flex-direction: column;
+        align-items: center;
+    }
+    .connectMentors .tricks .row .item{
+        width: 100%;
+    }
+    .connectMentors .tricks .row .item .image{
+        width: 5%;
+        background-color: #E6F1FE;
+        padding: 1rem;
+        border-radius: 5rem;
+    }
+    .connectMentors .tricks .row .item h5{
+        width: 80%;
+        text-align: center;
+    }
+    .connectMentors .form{
+        margin-right: 2rem;
+    }
+    .connectMentors .form form{
+        width: 80%;
+    }
+}
+@media only screen and (max-width: 425px) {
+    .connectMentors .form .btn-primary{
+        width: 100%;
+    }
+}
