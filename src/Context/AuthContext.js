@@ -10,7 +10,7 @@ export function useAuth() {
 
 //Authentication Context Component
 export default function AuthProvider({ children }) {
-  const [currentUser, setCurrentUser] = useState()
+  const [currentUser, setCurrentUser] = useState(null)
   const [loading, setLoading] = useState(true);
   //create New user using email and password
 
@@ -60,13 +60,35 @@ export default function AuthProvider({ children }) {
       },
       body: JSON.stringify({...data})
     })
-    let user = await res.json();
-    return user;
+    let response = await res.json();
+    return response;
+
+}
+async function menteeProfile(data) {
+   
+  const Url = host + 'mentee/profile'
+  let res = await fetch(Url, {
+    method: 'POST',
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({...data})
+  })
+  let response = await res.json();
+  return response;
 
 }
   function logout() {
     return 0;
   }
+  useEffect(() => {
+    console.log(JSON.parse(window.localStorage.getItem('currentUser')))
+    setCurrentUser(JSON.parse(window.localStorage.getItem('currentUser')));
+  }, []);
+
+  useEffect(() => {
+    window.localStorage.setItem('currentUser', currentUser);
+  }, [currentUser]);
   //listen for authentication change event
   useEffect(() => {
     setLoading(false);
@@ -77,6 +99,7 @@ export default function AuthProvider({ children }) {
     createUser,
     authenticateUser,
     mentorProfile,
+    menteeProfile,
     logout
   }
 
