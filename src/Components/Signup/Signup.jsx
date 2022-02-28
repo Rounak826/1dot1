@@ -28,6 +28,7 @@ export default function Signup() {
               setError({status:e.error,message:e.message});
               console.log(e);
               if(!e.error){
+                setLoading(false);
                 navigate(`/${e.user.role}-setup`);
               }
                 

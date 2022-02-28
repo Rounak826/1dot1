@@ -74,6 +74,7 @@
 .mentorPage .profile .side .social{
     display: flex;
     flex-direction: column;
+    margin-bottom: 2rem;
    
 }
 .mentorPage .profile .side .social .wrapper{
@@ -117,9 +118,13 @@
     margin: 0;
 }
 .mentorPage .main .head .text hr{
-    width: 1.5rem;
-    border: solid 1px #90e0ef;
+    width: 6%;
+    min-width: 2rem;
+    height: 2px;
+    background-color:#90e0ef;
+    border: none;
     margin: 0;
+    margin-top: 0.5rem;
     margin-left: 2px;
 }
 .mentorPage .main p{

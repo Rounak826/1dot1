@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react'
 import Hero from '../Hero/Hero'
-import { FilePond, File, registerPlugin } from 'react-filepond'
+import { FilePond, registerPlugin } from 'react-filepond'
 import FilePondPluginFileEncode from 'filepond-plugin-file-encode';
 import 'filepond/dist/filepond.min.css'
 import FilePondPluginImageExifOrientation from 'filepond-plugin-image-exif-orientation'
@@ -15,8 +15,6 @@ import check from '../../Assets/mentor-signup/check-mark.png'
 import clock from '../../Assets/mentor-signup/wall-clock.png'
 import { AlertCircle, X } from 'react-feather'
 import { useAuth } from '../../Context/AuthContext'
-import BhavyaHaswani from '../../Assets/Mentors-squad/Bhavya-Haswani1.jpg'
-import { render } from '@testing-library/react';
 // Register the plugins
 registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview,FilePondPluginFileEncode)
 
@@ -125,6 +123,7 @@ function Form() {
     const [method, setMethod] = useState(0);
     const [data, setData] = useState(initial);
     const {currentUser} = useAuth(); 
+    const UID = currentUser.user._id; 
     const [photo, setPhoto] = useState()
     const [resume, setResume] = useState()
     const { mentorProfile } = useAuth();
@@ -160,12 +159,13 @@ function Form() {
     async function handelSubmit(e) {
 
         e.preventDefault();
-        let photo64 =photo[0].getFileEncodeBase64String()
-        let resume64 = resume[0].getFileEncodeBase64String()
-        
+        let photo64 =photo[0].getFileEncodeDataURL();
+        let resume64 = resume[0].getFileEncodeDataURL();
+        console.log(currentUser.user._id);
         setData({
-            user_id: currentUser.user._id,
+            user_id:UID,
             name: name.current.value,
+            email:email.current.value,
             mobile_no: mobNo.current.value,
             dob: dob.current.value,
             gender:gender.current.value,

@@ -1,49 +1,75 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import './Mentorpage.css'
-import BhavyaHaswani from '../../Assets/Mentors-squad/Bhavya-Haswani1.jpg'
 import award from '../../Assets/Mentor-page/award.png'
 import document from '../../Assets/Mentor-page/document.png'
 import graduationCap from '../../Assets/Mentor-page/graduation-cap.png'
 import job from '../../Assets/Mentor-page/job.png'
 import language from '../../Assets/Mentor-page/language.png'
 import { ReactComponent as Whatsapp } from '../../Assets/whatsapp.svg'
-import { Facebook, Heart, Instagram, Linkedin, Share, Share2, Twitter } from 'react-feather'
-const data = {
-    name: 'CA BHAVYA HASWANI',
-    title: 'Asst. Manager, Practus Advisor Pvt. Ltd.',
-    image: BhavyaHaswani,
-    about_1dot1: `At the age where one is practically considered child for making any decision, the most important decision of his life (Career Choice) is on him.
-    It is very important to make the right decision and follow the right direction 1dot1 is an attempt to ease your life here.`,
-    skills: ['Business Analysis', 'Financial Reporting', 'Cost Management Services', 'Legal Documentation', 'Banking Compliance'],
-    time: 'Daily (7:30 pm to 8:30 pm)',
-    social: { Instagram: 'https://instagram.com/', Twitter: 'https://www.twitter.com/', Linkedin: '', Facebook: '' },
-    about: [
-        'Bhavya never had a rigid plan on where he would go from the very 1st day. It’s always been “one step at a time” for him. Starting from the day he passed HSC, he was clear about going for Commerce because he could not handle science.',
-        'During 1st year of graduation, he thought of giving a chance to CA field and finally he registered himself for CPT (CA Foundation now) and gradually with the time he was sure to pursue career in this field.',
-        'As he said “one step at a time” all this happened with this simple formula. Meanwhile, he worked on start ups, sold mobile phones, handled legal and banking compliance, done promotional events too.',
-        'He always thinks, re-thinks, handle confusions and then try all the available options.While in midst of all this he realized his attraction towards financial consultancyto end with.',
-        'Here he is now “Financial Consultant”, and loves to maintain his travel albums.'
-    ],
-    languages: ['English', 'Hindi', 'Sindhi'],
-    education: [
-        'Chartered Accountancy, The Institute of Chartered Accountancy of India',
-        'Bachelor’s of Law (Intellectual Property rights and Law of Medicine), KC Law College',
-        'Bachelor’s of Commerce (Audit and Finance), HR College of Commerce and Economics'
-    ],
-    exp: [
-        'Assistant Manager (Finance Delivery), Practus Advisor’s Pvt Ltd (Mar’20 – Present)',
-        'Secretarial and Finance, MyMINZ (Jul’16 – Jan’18)',
-        'Associate (Legal Documentaion), Integreon Managed Services (Jun’17 – Jul’17)',
-        'Article Intern (Financial Consultancy), MyCFO (Jul’13 – Oct’15)',
-        'Article Intern (Audit and Taxation), Rohira Mehta and Associates (Sep’12 – Jun’13)'
-    ],
-    achievements: [
-        '(IPCC + Final) 17 Attempts and Now CA'
-    ],
-    likes: 3
-}
+import { Facebook, Heart, Instagram, Linkedin, Share2, Twitter } from 'react-feather'
+import { useAuth } from '../../Context/AuthContext'
+const initial = {
+    "status": 200,
+    "error": false,
+    "result": "",
+    "message": "",
+    "data": {
+      "_id": "",
+      "user_id": "",
+      "name": "",
+      "email": "",
+      "mobile_no": "",
+      "dob": "",
+      "gender": "",
+      "language": "",
+      "about": "",
+      "city": "",
+      "current_job": " ",
+      "experience": "",
+      "education": "",
+      "skills": "",
+      "achivement": "",
+      "opinion_about_1dot1": "",
+      "prefered_time": "",
+      "expected_fee": "",
+      "payment_mode": {
+        "method": "",
+        "upi": "",
+        "accountNo": "",
+        "bankingName": "",
+        "IFSC": ""
+      },
+      "linkedin": "",
+      "instagram": "",
+      "facebook": "",
+      "twitter": "",
+      "profile_pic_source": {
+        "type": "Buffer",
+        "data": []
+      },
+      "resume_source": {
+        "type": "Buffer",
+        "data": []
+      },
+      "__v": 0
+    }
+  }
 export default function Mentorpage() {
+    const location = useLocation();
+    const [data, setData] = useState(initial);
+    const {fetchMentor} = useAuth();
+    useEffect(() => {
+        console.log(location.state);
+        fetchMentor(location.state).then(res=>{
+            if(!res.error){
+               setData(res.data);    
+            }
+            console.log(res)
+        }).catch(e=>console.log(e))
+    }, [fetchMentor,location.state])
+    
+
     return (
         <div className="mentorPage">
             <div className="profile">
@@ -52,7 +78,7 @@ export default function Mentorpage() {
                         <img src={data.image} alt="" />
                         <div className="text">
                             <h1>{data.name}</h1>
-                            <p>{data.title}</p>
+                            <p>{data.current_job}</p>
                         </div>
                     </div>
                     <div className='section'>
@@ -60,7 +86,7 @@ export default function Mentorpage() {
                             <h5>What <span>{data.name}</span> feels about 1dot1?</h5>
                             <hr />
                         </div>
-                        <p>{data.about_1dot1}</p>
+                        <p>{data.opinion_about_1dot1}</p>
                     </div>
                     <div className="skills">
                         <div className="heading sm left">
@@ -68,7 +94,7 @@ export default function Mentorpage() {
                             <hr />
                         </div>
                         <ul>
-                            {data.skills.map((skill, i) => <li key={i}>{skill}</li>)}
+                            {stringToArray(data.skills,',').map((skill, i) => <li key={i}>{skill}</li>)}
                         </ul>
                     </div>
                     <div className="time">
@@ -76,7 +102,7 @@ export default function Mentorpage() {
                             <h5>Preferred Time</h5>
                             <hr />
                         </div>
-                        <p>{data.time}</p>
+                        <p>{data.prefered_time}</p>
                     </div>
 
                     <div className="social">
@@ -85,10 +111,10 @@ export default function Mentorpage() {
                             <hr />
                         </div>
                         <div className="wrapper">
-                            {data.social.Twitter.length > 0 && <a href={data.social.Twitter}><Twitter /></a>}
-                            {data.social.Facebook.length > 0 && <a href={data.social.Facebook}><Facebook /></a>}
-                            {data.social.Instagram.length > 0 && <a href={data.social.Instagram}><Instagram /></a>}
-                            {data.social.Linkedin.length > 0 && <a href={data.social.Linkedin}><Linkedin /></a>}
+                            {data.twitter&& <a href={data.twitter}><Twitter /></a>}
+                            {data.facebook&& <a href={data.facebook}><Facebook /></a>}
+                            {data.instagram&& <a href={data.instagram}><Instagram /></a>}
+                            {data.linkedin&& <a href={data.linkedin}><Linkedin /></a>}
                         </div>
 
                     </div>
@@ -100,31 +126,31 @@ export default function Mentorpage() {
                 <div className="main">
                     <div className="about">
                         <Head icon={document} heading={'About'} />
-                        {data.about.map((para, i) => <p key={i}>{para}</p>)}
+                        {stringToArray(data.about, "   ").map((para, i) => <p key={i}>{para}</p>)}
                     </div>
                     <div className="language">
                         <Head icon={language} heading={'Languages Known'} />
                         <ul>
-                            {data.languages.map((lang, i) => <li key={i}>{lang}</li>)}
+                            {stringToArray(data.language, ",").map((lang, i) => <li key={i}>{lang}</li>)}
                         </ul>
 
                     </div>
                     <div className="education">
                         <Head icon={graduationCap} heading={'Education'} />
                         <ul>
-                            {data.education.map((edu, i) => <li key={i}>{edu}</li>)}
+                            {stringToArray( data.education, ",").map((edu, i) => <li key={i}>{edu}</li>)}
                         </ul>
                     </div>
                     <div className="Experience">
                         <Head icon={job} heading={'Experience'} />
                         <ul>
-                            {data.exp.map((exp, i) => <li key={i}>{exp}</li>)}
+                            {stringToArray( data.experience, ",").map((exp, i) => <li key={i}>{exp}</li>)}
                         </ul>
                     </div>
                     <div className="Achievements">
                         <Head icon={award} heading={'Achievements'} />
                         <ul>
-                            {data.achievements.map((achievements, i) => <li key={i}>{achievements}</li>)}
+                            {stringToArray( data.achivement,',' ).map((achievements, i) => <li key={i}>{achievements}</li>)}
                         </ul>
                     </div>
 
@@ -173,4 +199,12 @@ function Head(props) {
             </div>
         </div>
     );
+}
+function stringToArray(str,point){
+    try{
+        return str.split(point);
+    }catch{
+        return [];
+    }
+    
 }
