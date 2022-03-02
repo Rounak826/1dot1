@@ -32,12 +32,12 @@ export default function Contactus() {
                     <div className="social">
                         <h5>Keep In Touch</h5>
                         <div className="row">
-                            <a href="/"><img src={insta} alt="" /></a>
-                            <a href="/"><img src={twitter} alt="" /></a>
-                            <a href="/"><img src={facebook} alt="" /></a>
-                            <a href="/"><img src={youtube} alt="" /></a>
-                            <a href="/"><img src={linkedin} alt="" /></a>
-                            <a href="/"><img src={telegram} alt="" /></a>
+                        <a href="https://www.instagram.com/1dot1.in/"><img src={insta} alt="instagram" /></a>
+                        <a href="https://twitter.com/1dot1_in"><img src={twitter} alt="twitter" /></a>
+                        <a href="https://www.facebook.com/1dot1.in"><img src={facebook} alt="facebook" /></a>
+                        <a href="https://www.youtube.com/channel/UC76FGqG88OJxWg5XufLkAhw/featured"><img src={youtube} alt="youtube" /></a>
+                        <a href="https://www.linkedin.com/company/1dot1"><img src={linkedin} alt="linkedin" /></a>
+                        <a href="https://t.me/one_dot_one"><img src={telegram} alt="telegram" /></a>
                         </div>
                     </div>
 
