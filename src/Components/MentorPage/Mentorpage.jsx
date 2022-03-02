@@ -60,12 +60,12 @@ export default function Mentorpage() {
     const [data, setData] = useState(initial);
     const {fetchMentor} = useAuth();
     useEffect(() => {
-        console.log(location.state);
+       // console.log(location.state);
         fetchMentor(location.state).then(res=>{
             if(!res.error){
                setData(res.data);    
             }
-            console.log(res)
+            //console.log(res)
         }).catch(e=>console.log(e))
     }, [fetchMentor,location.state])
     

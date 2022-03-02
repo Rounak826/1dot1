@@ -19,7 +19,6 @@ import MenteeSetup from './Components/MenteeSetup/MenteeSetup';
 import Admin from './Components/Admin/Admin';
 import AuthProvider from './Context/AuthContext';
 import PreventedRoute from './PreventedRoute';
-import Test from './Components/Test/Test';
 
 
 function App() {
@@ -47,7 +46,6 @@ function App() {
         <Route exact path='/mentor-setup' element={<MentorSetup/>}/>
         <Route exact path='/mentee-setup' element={<MenteeSetup/>}/>
         <Route exact path='/admin' element={<Admin/>}/>
-        <Route exact path='/test' element={<Test/>}/>
        </Routes>
        
        <Footer/>

@@ -46,7 +46,7 @@ export default function MenteeSetup() {
          } )
          
          menteeProfile(data).then(e=>{
-             console.log(e);
+             //console.log(e);
              setMessage({status:true, message:e.result ,error:e.error})
              if(!e.error){
                  navigate('/');

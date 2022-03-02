@@ -26,7 +26,7 @@ export default function Signup() {
             setLoading(true);
             createUser(emailRef.current.value,passwordRef.current.value,accountRef.current.value).then(e=>{
               setError({status:e.error,message:e.message});
-              console.log(e);
+              //console.log(e);
               if(!e.error){
                 setLoading(false);
                 navigate(`/${e.user.role}-setup`);

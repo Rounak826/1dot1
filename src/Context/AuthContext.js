@@ -97,7 +97,7 @@ export default function AuthProvider({ children }) {
     return response;
   }
   async function fetchMentor(id) {
-    console.log({id});
+    //console.log({id});
     const Url = host + 'mentor'
     let res = await fetch(Url, {
       method: 'POST',

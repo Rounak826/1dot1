@@ -126,7 +126,7 @@ function Form() {
     const [method, setMethod] = useState(0);
     const [data, setData] = useState(initial);
     const { currentUser,fetchCategory } = useAuth();
-    console.log(currentUser);
+   // console.log(currentUser);
     let UID = currentUser !==null ? currentUser.user._id : "sgknlrhgahtkaerli";
     const [photo, setPhoto] = useState()
     const [resume, setResume] = useState()
@@ -205,7 +205,7 @@ function Form() {
             
         });
         }catch (e){
-            console.log(e);
+           // console.log(e);
             setMessage({status:true, message:"error:"+e ,error:true})
             scrollToTargetAdjusted("Form-alert");
         }

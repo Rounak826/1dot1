@@ -28,7 +28,7 @@ export default function Admin() {
       })
       getOverview().then(e=>{
         setOverview(e);
-        console.log(e);
+        //console.log(e);
       })
 
     }, [getOverview,fetchRequests,reload])
@@ -76,9 +76,9 @@ function RequestCard(props) {
     const { src, name, position, mail, id, exp , category,setReload,reload } = props;
     const {respondRequest,currentUser,pushMentor} = useAuth();
     function handelClick(mentor_id,response) {
-        console.log(response);
-        respondRequest({mentor_id, admin_id:"621c687089c4fd0a1789e96f" ,response}).then(e=>{
-            console.log(e);
+       // console.log(response);
+        respondRequest({mentor_id, admin_id:currentUser?currentUser.user._id:null ,response}).then(e=>{
+           // console.log(e);
             if(response==="true"){
 
                 pushMentor(
@@ -92,7 +92,7 @@ function RequestCard(props) {
                         }
                     }
                 ).then(e=>{
-                    console.log(e);
+                   // console.log(e);
                     setReload(!reload);
                     
                 })

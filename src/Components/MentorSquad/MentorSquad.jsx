@@ -6,16 +6,9 @@ import { Search } from 'react-feather'
 import Slider from "react-slick";
 import { motion } from 'framer-motion'
 import placeholder from '../../Assets/male-placeholder.jpeg'
-import DikshaHeliwal from '../../Assets/Mentors-squad/Diksha-Heliwal1.png'
-import GarimaDhanwani from '../../Assets/Mentors-squad/Garima-Dhanwani.jpg'
-import PrabalKumar from '../../Assets/Mentors-squad/Prabal-Kumar-Rajpoot1.png'
-import PushkarDeshpande from '../../Assets/Mentors-squad/CA-Pushkar-Deshpande-1.png'
-import RahulChattani from '../../Assets/Mentors-squad/Rahul-Chattani-1.jpg'
-import BhavyaHaswani from '../../Assets/Mentors-squad/Bhavya-Haswani1.jpg'
-import PriyanshiJain from '../../Assets/Mentors-squad/CA-Priyanshi-Jain.png'
 import { useAuth } from '../../Context/AuthContext'
 import { Link } from 'react-router-dom'
-const categoryList = ['FINANCE', 'LAW', 'INFORMATION TECHNOLOGY', 'MEDICINE & SURGERY', 'COMPANY SECRETARY', 'BAKING', 'MAKEUP ARTIST​', 'LITERATURE & ARTS', 'FINANCE', 'LAW', 'INFORMATION TECHNOLOGY', 'MEDICINE & SURGERY']
+//const categoryList = ['FINANCE', 'LAW', 'INFORMATION TECHNOLOGY', 'MEDICINE & SURGERY', 'COMPANY SECRETARY', 'BAKING', 'MAKEUP ARTIST​', 'LITERATURE & ARTS', 'FINANCE', 'LAW', 'INFORMATION TECHNOLOGY', 'MEDICINE & SURGERY']
 export default function MentorSquad() {
   const [data, setData] = useState([]);
   const{fetchCategory}=useAuth()
@@ -68,96 +61,6 @@ export default function MentorSquad() {
     ]
   };
 
-  const dummydata = [
-    {
-      category: 'Finance',
-      mentors: [
-        {
-          name: 'CA PRIYANSHI JAIN',
-          title: 'Faculty & Student Mentor, CAPS Academy',
-          image: PriyanshiJain
-        },
-        {
-          name: 'CA BHAVYA HASWANI',
-          title: 'Asst. Manager, Practus Advisor',
-          image: BhavyaHaswani
-        },
-        {
-          name: 'CA RAHUL CHHATTANI',
-          title: 'Manager, Waterfield Advisors',
-          image: RahulChattani
-        },
-        {
-          name: 'CA PUSHKAR DESHPANDE',
-          title: 'Business & Integration Arch Senior Analyst, Accenture',
-          image: PushkarDeshpande
-        },
-        {
-          name: 'PRABAL KUMAR RAJPOOT',
-          title: 'Analyst, JPMorgan Chase & Co.',
-          image: PrabalKumar
-        },
-      ]
-
-    },
-    {
-      category:'Baking',
-      mentors: [
-        {name:'DIKSHA HELIWAL',
-         title:'Professional Home Baker',
-         image: DikshaHeliwal
-        },
-        {name: 'GarimaDhanwani',
-        title:'Professional Home Baker',
-        image: GarimaDhanwani
-       },
-      ]
-    },
-    {
-      category:'Baking',
-      mentors: [
-        {name:'DIKSHA HELIWAL',
-         title:'Professional Home Baker',
-         image: DikshaHeliwal
-        },
-        {name: 'GarimaDhanwani',
-        title:'Professional Home Baker',
-        image: GarimaDhanwani
-       },
-      ]
-    },
-    {
-      category: 'Finance',
-      mentors: [
-        {
-          name: 'CA PRIYANSHI JAIN',
-          title: 'Faculty & Student Mentor, CAPS Academy',
-          image: PriyanshiJain
-        },
-        {
-          name: 'CA BHAVYA HASWANI',
-          title: 'Asst. Manager, Practus Advisor',
-          image: BhavyaHaswani
-        },
-        {
-          name: 'CA RAHUL CHHATTANI',
-          title: 'Manager, Waterfield Advisors',
-          image: RahulChattani
-        },
-        {
-          name: 'CA PUSHKAR DESHPANDE',
-          title: 'Business & Integration Arch Senior Analyst, Accenture',
-          image: PushkarDeshpande
-        },
-        {
-          name: 'PRABAL KUMAR RAJPOOT',
-          title: 'Analyst, JPMorgan Chase & Co.',
-          image: PrabalKumar
-        },
-      ]
-
-    }
-  ]
 
   return (
     <div className="mentorSquad">
@@ -237,7 +140,7 @@ function NextArrow(props) {
 }
 
 function MentorCard(props) {
-  console.log(props);
+  //console.log(props);
   return (
     <Link to='/mentor' className='mentorCard' state={props.id} >
     
