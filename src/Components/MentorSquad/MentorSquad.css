@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    
 }
 .mentorSquad .search{
     width: 100%;
@@ -84,6 +85,7 @@
     display: flex;
     flex-direction: column;
     align-items: space-between;
+    text-decoration: none !important;
 }
 .mentorSquad .container .mentorCard .image{
     border-radius:1rem 1rem 0 0;

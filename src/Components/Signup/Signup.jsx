@@ -108,9 +108,9 @@ export default function Signup() {
                 {error.status&&<FormError message={error.message}/>}    
                 <div className="form-row">
                     <div className="form-col-50">
-                        <label htmlFor="account_type">Confirm Password*</label>
+                        <label htmlFor="account_type">Join As*</label>
                         <select ref={accountRef} style={acTypeValidation} name="account-type">
-                            <option value={''}>-select-</option>
+                            <option value={''}>-Select-</option>
                             <option value="mentor">Mentor</option>
                             <option value="mentee">Mentee</option>
                         </select>

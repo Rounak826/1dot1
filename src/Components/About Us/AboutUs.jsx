@@ -101,7 +101,7 @@ function About(){
           >
             <h3>ABOUT <span>1dot1</span> </h3>
             <hr />
-            <p>1We’re a team of professionals from different background and experiences. We initiated this platform with a motive to be a person which we wished we had during our career decision turns at any walk of life.</p>
+            <p>We’re a team of professionals from different background and experiences. We initiated this platform with a motive to be a person which we wished we had during our career decision turns at any walk of life.</p>
             <p>This platform is for sharing and exchanging experiences in the form of mentoring. Professionals can also develop their business network by joining this curated professional team.</p>
           </motion.div>
           <motion.div className="img"

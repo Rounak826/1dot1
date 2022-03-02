@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Hero from '../Hero/Hero'
 import { FilePond, registerPlugin } from 'react-filepond'
 import FilePondPluginFileEncode from 'filepond-plugin-file-encode';
@@ -15,13 +15,14 @@ import check from '../../Assets/mentor-signup/check-mark.png'
 import clock from '../../Assets/mentor-signup/wall-clock.png'
 import { AlertCircle, X } from 'react-feather'
 import { useAuth } from '../../Context/AuthContext'
+import Alert from '../Alert/Alert';
 // Register the plugins
-registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview,FilePondPluginFileEncode)
+registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview, FilePondPluginFileEncode)
 
 export default function MentorSignup() {
     const [showForm, setShowForm] = useState(false);
     const [showGuidelines, setShowGuidelines] = useState(false);
-    
+
     return (
         <div className="mentorSignup">
             <Hero heading={'Join As A Mentor'} src={illustration} />
@@ -120,10 +121,13 @@ const initial = {
     resume_source: "",
 }
 function Form() {
+    const[message,setMessage] = useState('');
+    const [categoryList, setCategoryList] = useState(['IT Developer', 'Writer']);
     const [method, setMethod] = useState(0);
     const [data, setData] = useState(initial);
-    const {currentUser} = useAuth(); 
-    const UID = currentUser.user._id; 
+    const { currentUser,fetchCategory } = useAuth();
+    console.log(currentUser);
+    let UID = currentUser !==null ? currentUser.user._id : "sgknlrhgahtkaerli";
     const [photo, setPhoto] = useState()
     const [resume, setResume] = useState()
     const { mentorProfile } = useAuth();
@@ -143,7 +147,7 @@ function Form() {
     const about1dot1 = useRef();
     const time = useRef();
     const fee = useRef();
-    const upiId= useRef();
+    const upiId = useRef();
     const acNo = useRef();
     const bankingName = useRef();
     const IFSC = useRef();
@@ -152,49 +156,68 @@ function Form() {
     const Facebook = useRef();
     const Twitter = useRef();
     const other = useRef();
+    const category = useRef();
 
-
+    useEffect(() => {
+        fetchCategory().then(res=>{
+            setCategoryList(res);
+        })
+    }, [fetchCategory])
+    
 
 
     async function handelSubmit(e) {
 
         e.preventDefault();
-        let photo64 =photo[0].getFileEncodeDataURL();
-        let resume64 = resume[0].getFileEncodeDataURL();
-        console.log(currentUser.user._id);
+        try{
+            let photo64 = photo[0].getFileEncodeDataURL();
+            let resume64 = resume[0].getFileEncodeDataURL();
         setData({
-            user_id:UID,
+            user_id: UID,
             name: name.current.value,
-            email:email.current.value,
+            email: email.current.value,
             mobile_no: mobNo.current.value,
             dob: dob.current.value,
-            gender:gender.current.value,
+            gender: gender.current.value,
             language: langauge.current.value,
-            about:aboutYou.current.value,
-            city:address.current.value,
+            about: aboutYou.current.value,
+            city: address.current.value,
             current_job: job.current.value,
             experience: exp.current.value,
             education: education.current.value,
-            skills:skills.current.value,
+            skills: skills.current.value,
             achivement: achievements.current.value,
             opinion_about_1dot1: about1dot1.current.value,
-            prefered_time:time.current.value,
+            prefered_time: time.current.value,
             expected_fee: fee.current.value,
-            payment_mode: {method:method,upi:upiId.current?upiId.current.value:"", accountNo:acNo.current? acNo.current.value:'', bankingName:bankingName.current?bankingName.current.value:'',IFSC:IFSC.current? IFSC.current.value:''},
+            payment_mode: { method: method, upi: upiId.current ? upiId.current.value : "", accountNo: acNo.current ? acNo.current.value : '', bankingName: bankingName.current ? bankingName.current.value : '', IFSC: IFSC.current ? IFSC.current.value : '' },
             linkedin: Linkedin.current.value,
             instagram: Instagram.current.value,
             facebook: Facebook.current.value,
             twitter: Twitter.current.value,
-            profile_pic_source:photo64,
-            resume_source:resume64,
+            profile_pic_source: photo64,
+            resume_source: resume64,
+            category: category.current.value
         })
-        mentorProfile(data).then(e=>{console.log(e)});
+        mentorProfile(data).then(e => { 
+            setMessage({status:true, message:e.result ,error:e.error})
+            scrollToTargetAdjusted("Form-alert");
+            
+        });
+        }catch (e){
+            console.log(e);
+            setMessage({status:true, message:"error:"+e ,error:true})
+            scrollToTargetAdjusted("Form-alert");
+        }
         
+        
+
     }
     return (
         <div className="form">
-            <form action="" onSubmit={handelSubmit} >
-            <h4>Upload Files</h4>
+            <form action="">
+            {message.status&&<Alert color={message.color} message={message.message} error={message.error} />}
+                <h4>Upload Files</h4>
                 <div className="form-row">
                     <div className="form-col-50 has-tooltip">
                         <label htmlFor="photo">Photograph</label>
@@ -203,7 +226,7 @@ function Form() {
                             onupdatefiles={setPhoto}
                             allowMultiple={false}
                             name="photo"
-                            allowFileEncode	={true}
+                            allowFileEncode={true}
                             labelIdle='Drag & Drop your files or <span class="filepond--label-action">Browse</span>'
                         />
                         <div className="tooltip"><AlertCircle /><p>Please do not share unclear images. At least face should be clearly visible. Best would be with professional attire.</p></div>
@@ -215,7 +238,7 @@ function Form() {
                             onupdatefiles={setResume}
                             allowMultiple={false}
                             name="resume"
-                            allowFileEncode	={true}
+                            allowFileEncode={true}
                             labelIdle='Drag & Drop your files or <span class="filepond--label-action">Browse</span>'
                         />
                         <div className="tooltip"><AlertCircle /><p> You can skip below mentioned relevant fields which are covered in your resume.</p></div>
@@ -226,14 +249,14 @@ function Form() {
                 <div className="form-row">
                     <div className="form-col-100 has-tooltip">
                         <label htmlFor="name">Full Name</label>
-                        <input placeholder='Jhon Doe' type="text" name="name" ref={name}/>
+                        <input placeholder='Jhon Doe' type="text" name="name" ref={name} />
                         <div className="tooltip"><AlertCircle /><p> Enter Your Full name</p></div>
                     </div>
                 </div>
                 <div className="form-row">
                     <div className="form-col-25">
                         <label htmlFor="DOB">D.O.B </label>
-                        <input type="date" name="DOB"  ref={dob}/>
+                        <input type="date" name="DOB" ref={dob} />
 
                     </div>
                     <div className="form-col-25">
@@ -290,7 +313,7 @@ function Form() {
                     </div>
                     <div className="form-col-50 has-tooltip">
                         <label htmlFor="exp">Experience</label>
-                        <input placeholder='Job Role or Position ,company' type="text" name="exp"  ref={exp}/>
+                        <input placeholder='Job Role or Position ,company' type="text" name="exp" ref={exp} />
                         <div className="tooltip"><AlertCircle /><p>Eg.: 1. Job role X - Company name X (From-To), 2. Job role Y - Company name Y (From-To).</p></div>
                     </div>
                 </div>
@@ -324,13 +347,22 @@ function Form() {
                 <div className="form-row">
                     <div className="form-col-50 has-tooltip">
                         <label htmlFor="time">Preferred Time for Mentoring </label>
-                        <input placeholder='eg.7pm-8pm weekends' type="text" name="time" ref={time}/>
+                        <input placeholder='eg.7pm-8pm weekends' type="text" name="time" ref={time} />
                         <div className="tooltip"><AlertCircle /><p>Ex: Daily 7pm-8pm/ Weekends/ Sunday 11am-2pm. *This will be mentioned in your profile. So that Mentee will submit request after checking preferred time. Anyways we'll schedule call only after your confirmation, but just a check on your preferred time*</p></div>
                     </div>
                     <div className="form-col-50 has-tooltip">
                         <label htmlFor="fee">Expected Mentorship Fee</label>
                         <input placeholder='eg. Rs 200' type="text" name="fee" ref={fee} />
                         <div className="tooltip"><AlertCircle /><p>INR per Call (20-30 mnt). 100% will be transferred to you. We've average mentoring fee of Rs.200</p></div>
+                    </div>
+                </div>
+                <div className="form-row">
+                <div className="form-col-50 has-tooltip">
+                        <label htmlFor="currentjob">Select Category</label>
+                        <select ref={category} name="category">
+                            {categoryList.map(cat=><option key={cat.category} value={cat.category}>{cat.category}</option>)}
+                        </select>
+                        <div className="tooltip"><AlertCircle /><p>Category In which you will be providing mentorship, it will allow the mentee to find you easily.</p></div>
                     </div>
                 </div>
                 <h4>Banking Details</h4>
@@ -363,7 +395,7 @@ function Form() {
                         <div className="form-row">
                             <div className="form-col-50">
                                 <label htmlFor="bankingName">Full Name</label>
-                                <input placeholder='eg. Jhon Doe' type="text" name="bankingName" ref={bankingName}/>
+                                <input placeholder='eg. Jhon Doe' type="text" name="bankingName" ref={bankingName} />
                             </div>
                             <div className="form-col-50">
                                 <label htmlFor="ifsc">IFSC code</label>
@@ -408,7 +440,7 @@ function Form() {
                         <div className="tooltip"><AlertCircle /><p>Eg. any other social media links, website address or anything you want to show in your profile</p></div>
                     </div>
                 </div>
-                <input type='submit' className='btn-primary' />
+                <button onClick={handelSubmit} className='btn-primary'>Submit</button>
             </form>
         </div>
     )
@@ -441,4 +473,15 @@ function Guidelines(props) {
 
         </div>
     )
+}
+function scrollToTargetAdjusted(id){
+    var element = document.getElementById(id);
+    var headerOffset = 100;
+    var elementPosition = element.getBoundingClientRect().top;
+    var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+  
+    window.scrollTo({
+         top: offsetPosition,
+         behavior: "smooth"
+    });
 }

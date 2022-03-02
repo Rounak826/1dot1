@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Hero from '../Hero/Hero'
 import './MentorSquad.css'
 import illustration from '../../Assets/Collaboration-amico.png'
 import { Search } from 'react-feather'
 import Slider from "react-slick";
 import { motion } from 'framer-motion'
+import placeholder from '../../Assets/male-placeholder.jpeg'
 import DikshaHeliwal from '../../Assets/Mentors-squad/Diksha-Heliwal1.png'
 import GarimaDhanwani from '../../Assets/Mentors-squad/Garima-Dhanwani.jpg'
 import PrabalKumar from '../../Assets/Mentors-squad/Prabal-Kumar-Rajpoot1.png'
@@ -12,8 +13,18 @@ import PushkarDeshpande from '../../Assets/Mentors-squad/CA-Pushkar-Deshpande-1.
 import RahulChattani from '../../Assets/Mentors-squad/Rahul-Chattani-1.jpg'
 import BhavyaHaswani from '../../Assets/Mentors-squad/Bhavya-Haswani1.jpg'
 import PriyanshiJain from '../../Assets/Mentors-squad/CA-Priyanshi-Jain.png'
+import { useAuth } from '../../Context/AuthContext'
+import { Link } from 'react-router-dom'
 const categoryList = ['FINANCE', 'LAW', 'INFORMATION TECHNOLOGY', 'MEDICINE & SURGERY', 'COMPANY SECRETARY', 'BAKING', 'MAKEUP ARTIST​', 'LITERATURE & ARTS', 'FINANCE', 'LAW', 'INFORMATION TECHNOLOGY', 'MEDICINE & SURGERY']
 export default function MentorSquad() {
+  const [data, setData] = useState([]);
+  const{fetchCategory}=useAuth()
+  useEffect(() => {
+    fetchCategory().then(e=>{
+      setData(e);
+    })
+  }, [fetchCategory])
+  
   const settings = {
     dots: false,
     infinite: true,
@@ -28,7 +39,7 @@ export default function MentorSquad() {
       {
         breakpoint: 1196,
         settings: {
-          slidesToShow: 6,
+          slidesToShow: 4,
           slidesToScroll: 3,
         }
       },
@@ -57,7 +68,7 @@ export default function MentorSquad() {
     ]
   };
 
-  const data = [
+  const dummydata = [
     {
       category: 'Finance',
       mentors: [
@@ -162,9 +173,9 @@ export default function MentorSquad() {
       </div>
 
       <Slider {...settings}>
-        {categoryList.map((x, i) => {
+        {data.map((x, i) => {
           return (
-            <Item key={i} text={x} index={i} />
+            <Item key={i} text={x.category} index={i} />
           );
         })}
       </Slider>
@@ -181,7 +192,7 @@ export default function MentorSquad() {
 
                 {catData.mentors.map((mentor, index) => {
                   return (
-                    <MentorCard key={index} src={mentor.image} name={mentor.name} desc={mentor.title} />
+                    <MentorCard key={index} id={mentor.id} src={mentor.image?mentor.image:placeholder} name={mentor.name} desc={mentor.job} />
                   )
                 })
 
@@ -226,8 +237,10 @@ function NextArrow(props) {
 }
 
 function MentorCard(props) {
+  console.log(props);
   return (
-    <div className="mentorCard">
+    <Link to='/mentor' className='mentorCard' state={props.id} >
+    
       <div className="image">
         <motion.img whileHover={{ scale: 1.3 }} transition={{ duration: 1 }} src={props.src} alt="" />
       </div>
@@ -235,6 +248,6 @@ function MentorCard(props) {
         <h5>{props.name}</h5>
         <p>{props.desc}</p>
       </div>
-    </div>
+    </Link>
   )
 }

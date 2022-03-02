@@ -7,15 +7,31 @@ import { Check, Eye, Mail, X } from 'react-feather';
 import { useAuth } from '../../Context/AuthContext';
 import { Link } from 'react-router-dom';
 export default function Admin() {
-    const {fetchRequests} = useAuth();
+    const [reload, setReload] = useState(false);
+    const {fetchRequests, getOverview} = useAuth();
     const [requestList ,setList] = useState([]);
-    
+    const [overview ,setOverview] = useState(
+        {
+            "status": 200,
+            "data": {
+              "mentorCount": 0,
+              "menteeCount": 0
+            },
+            "error": false,
+            "result": "SUCCESS",
+            "message": "SUCCESS"
+          }
+    );
     useEffect(() => {
       fetchRequests().then(e=>{
           setList(e);
-          console.log(e);
       })
-    }, [fetchRequests])
+      getOverview().then(e=>{
+        setOverview(e);
+        console.log(e);
+      })
+
+    }, [getOverview,fetchRequests,reload])
     
     return (
         <div className="admin">
@@ -26,12 +42,12 @@ export default function Admin() {
                     <div className="card">
                         <img src={mentee} alt="" />
                         <h3>Enrolled Mentee</h3>
-                        <p>2125</p>
+                        <p>{overview.data.menteeCount}</p>
                     </div>
                     <div className="card">
                         <img src={mentor} alt="" />
                         <h3>Enrolled Mentor</h3>
-                        <p>189</p>
+                        <p>{overview.data.mentorCount}</p>
                     </div>
                     <div className="card">
                         <img src={request} alt="" />
@@ -45,7 +61,7 @@ export default function Admin() {
                 <div className="container">
                     {
                         requestList.map((req,i) => {
-                            return <RequestCard key={i} src={req.profile_pic_source} name={req.name} position={req.current_job} exp={req.experience} id={req.user_id} mail={req.email} />
+                            return <RequestCard key={i} setReload={setReload} reload={reload}  src={req.profile_pic_source} name={req.name} position={req.current_job} exp={req.experience} id={req.user_id} mail={req.email} category={req.category} />
                         })
                     }
 
@@ -56,14 +72,37 @@ export default function Admin() {
     )
 }
 function RequestCard(props) {
-    const {respondRequest,currentUser} = useAuth();
+
+    const { src, name, position, mail, id, exp , category,setReload,reload } = props;
+    const {respondRequest,currentUser,pushMentor} = useAuth();
     function handelClick(mentor_id,response) {
         console.log(response);
-        respondRequest({mentor_id,admin_id:"621c687089c4fd0a1789e96f" ,response}).then(e=>{
+        respondRequest({mentor_id, admin_id:"621c687089c4fd0a1789e96f" ,response}).then(e=>{
             console.log(e);
+            if(response==="true"){
+
+                pushMentor(
+                    {
+                        category: category,
+                        mentor:{
+                            "id":id,
+                            "name":name,
+                            "job":position,
+                            "image": src
+                        }
+                    }
+                ).then(e=>{
+                    console.log(e);
+                    setReload(!reload);
+                    
+                })
+            }else{
+                setReload(true);
+            }
+            
         })
     }
-    const { src, name, position, mail, id, exp } = props;
+    
     return (
         <div key={id} className="card">
             <div className="img">

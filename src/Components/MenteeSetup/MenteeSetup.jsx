@@ -44,7 +44,9 @@ export default function MenteeSetup() {
             state: state.current.value,
             field_intrest: interest.current.value,
          } )
+         
          menteeProfile(data).then(e=>{
+             console.log(e);
              setMessage({status:true, message:e.result ,error:e.error})
              if(!e.error){
                  navigate('/');

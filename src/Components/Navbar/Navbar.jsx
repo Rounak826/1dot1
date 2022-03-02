@@ -6,7 +6,7 @@ import logo from '../../Assets/Logo-1.png'
 import { useAuth } from '../../Context/AuthContext';
 import './Navbar.css'
 export default function Navbar() {
-  const {currentUser}= useAuth()
+  const {currentUser,logout}= useAuth()
   const [showMenu, setShowMenu] = useState(false);
   const [scrollPosition, setPosition] = useState(0);
   useLayoutEffect(() => {
@@ -39,7 +39,7 @@ export default function Navbar() {
         </div>
         {currentUser&&<div className="user">
           <button><User /></button>
-          <button><LogOut /></button>
+          <button onClick={e=>logout()}><LogOut /></button>
         </div>}
         <button onClick={() => { setShowMenu(true) }} className='menu'><Menu /></button>
       </nav>

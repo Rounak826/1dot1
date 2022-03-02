@@ -25,20 +25,20 @@ export default function ConnectMentors() {
                             </div>
 
                             <div className="form-col-50">
-                                <label htmlFor="lastName">First Name</label>
+                                <label htmlFor="lastName">Last Name</label>
                                 <input placeholder='Doe' type="text" name="lastName" />
                             </div>
                         </div>    
                             <div className="form-row">
                                 <div className="form-col-100">
-                                    <label htmlFor="Email">First Name</label>
+                                    <label htmlFor="Email">Email</label>
                                     <input placeholder='Jhondoe@gmail.com' type="text" name="Email" />
                                 </div>
                             </div>
                             <div className="form-row">
                                 <div className="form-col-100">
                                     <label htmlFor="Phone">Phone</label>
-                                    <input placeholder='666666666' type="text" name="Phone" />
+                                    <input placeholder='+91 666666666' type="text" name="Phone" />
                                 </div>
                             </div>
                             <div className="form-row">

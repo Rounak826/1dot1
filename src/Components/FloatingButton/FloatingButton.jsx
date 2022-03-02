@@ -14,7 +14,7 @@ export default function FloatingButton() {
     <>
       <motion.div animate={'wobble'} variants={variant} className="floatingBtn">
         <div className="label">Whatsapp</div>
-        <button><Whatsapp /></button>
+        <a href="https://wa.me/+917394021111"><Whatsapp /></a>
       </motion.div>
 
     </>

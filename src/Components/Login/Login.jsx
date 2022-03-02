@@ -64,18 +64,18 @@ export default function Login() {
 
     // at least one number, one lowercase and one uppercase letter
     // at least six characters
-    var re = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
-    if (re.test(str)) {
+    let flag = false;
+    if (str.length>0) {
       setPassValidation({ border: "solid 1px #c1c1c1" })
+      flag =true;
 
-    }
-
-    else {
+    }else {
       setPassValidation({ border: "solid 2px red" })
-      setError({ status: true, message: "Password to weak Use Strong password" });
+      setError({ status: true, message: "Please Enter Your Password" });
+      flag = false;
     }
 
-    return re.test(str)
+    return flag;
   }
   return (
     <div className="login">

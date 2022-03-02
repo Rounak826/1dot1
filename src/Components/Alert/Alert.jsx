@@ -18,6 +18,6 @@ export default function Alert(props) {
         )
     },[variant.wobble,controls,props.message])
   return (
-    <motion.div animate={controls} className="formError">{props.error?<AlertTriangle color={'red'}/>:<CheckCircle color={'green'}/>}<p>{props.message}</p></motion.div>
+    <motion.div id='Form-alert' animate={controls} className="formError">{props.error?<AlertTriangle color={'red'}/>:<CheckCircle color={'green'}/>}<p>{props.message}</p></motion.div>
   )
 }
